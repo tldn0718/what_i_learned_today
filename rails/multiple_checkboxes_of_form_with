@@ -1,0 +1,17 @@
+https://stackoverflow.com/questions/4425176/in-rails-how-to-handle-multiple-checked-checkboxes-just-split-on-the-or/33349898
+
+# view
+<%= form_with url: some_url, method: :put do |form| %>
+  <input type="checkbox" name="tag_ids[]" value="1" />
+  <input type="checkbox" name="tag_ids[]" value="2" />
+  <input type="checkbox" name="tag_ids[]" value="3" />
+<% end %>
+
+# controller
+tag_ids = params[:tag_ids]
+
+
+
+f.check_box :tag_ids, {multiple: true}, 1, nil 도 가능
+check_box parameter 정의
+check_box(method, options = {}, checked_value = "1", unchecked_value = "0")
